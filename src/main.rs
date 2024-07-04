@@ -5,7 +5,7 @@ mod util;
 mod weather;
 
 use crate::util::pause;
-use cardpack::{Pack, Pile};
+use cardpack::Pack;
 use context::{Context, Mode};
 use customer::draw_customer;
 use inquire::Select;
