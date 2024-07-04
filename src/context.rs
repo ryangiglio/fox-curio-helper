@@ -5,7 +5,7 @@ use rand::rngs::ThreadRng;
 use unic_langid::{langid, LanguageIdentifier};
 use strum_macros::{EnumString, Display};
 
-#[derive(EnumString, Display)]
+#[derive(EnumString, Display, PartialEq)]
 pub enum Mode {
     Manual,
     Automatic,
