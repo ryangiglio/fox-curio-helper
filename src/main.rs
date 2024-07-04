@@ -15,7 +15,7 @@ fn main() {
     let mut context = Context::setup();
 
     loop {
-        println!("Mode: {}", context.mode);
+        println!("Current Mode: {}", context.mode);
 
         let change_mode_option = if context.mode == Mode::Automatic {
             Mode::Manual
@@ -71,7 +71,7 @@ fn switch_mode(context: &mut Context) {
     if context.mode == Mode::Automatic {
         context.mode = Mode::Manual;
         println!("Changed to Manual mode - use a physical deck/dice and enter the results");
-        println!("Enter cards as two characters, like 2H for the Two of Hearts or JD for the Jack of Diamonds. Use T instead of 10, like TS for the Ten of Spades. Use only the first character for rank.");
+        println!("Enter cards as two characters, like 2H for the Two of Hearts or JD for the Jack of Diamonds. Use T instead of 10, like TS for the Ten of Spades.");
     } else {
         context.mode = Mode::Automatic;
         println!("Changed to Automatic mode - the app will draw/roll for you");

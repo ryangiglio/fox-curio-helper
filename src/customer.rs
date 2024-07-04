@@ -9,8 +9,11 @@ pub fn draw_customer(context: &mut Context) {
 
     if context.mode == Mode::Manual {
         println!("Draw a card to reveal a customer.");
+
         customer_card_index = Text::new("What card did you draw?").prompt().unwrap();
+
         println!("Roll a d20 for what type of book the customer is looking for.");
+
         genre_roll = CustomType::<u8>::new("What number did you roll?")
             .with_validator(|val: &u8| {
                 if *val < 1 || *val > 20 {

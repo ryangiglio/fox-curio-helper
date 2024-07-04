@@ -19,11 +19,11 @@ pub fn draw_weather(context: &mut Context) {
     let duration_rank: String;
 
     if context.mode == Mode::Manual {
-        println!("Enter card ranks as a single digit/letter, using T instead of 10. Possible ranks are A, 2, 3, 4, 5, 6, 7, 8, 9, T, J, Q, K");
-        description_rank1 = Text::new("What card rank did you draw for the weather?")
+        println!("Draw two cards, one for the weather and one for its duration.");
+        description_rank1 = Text::new("What card rank (just the value, not the suit) did you draw for the weather?")
             .prompt()
             .unwrap();
-        duration_rank = Text::new("What card rank did you draw for the duration of the weather?")
+        duration_rank = Text::new("What card rank (just the value, not the suit) did you draw for the duration of the weather?")
             .prompt()
             .unwrap();
     } else {
@@ -59,10 +59,8 @@ pub fn draw_weather(context: &mut Context) {
         if context.mode == Mode::Manual {
             println!("Draw another card to get the weather for the rest of the day.");
 
-            pause();
-
             description_rank2 =
-                Text::new("What card rank did you draw for the rest of the day's weather?")
+                Text::new("What card rank (just the value, not the suit) did you draw for the rest of the day's weather?")
                     .prompt()
                     .unwrap();
         } else {
